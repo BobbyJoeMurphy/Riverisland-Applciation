@@ -1,6 +1,7 @@
 package com.example.riverislandapplication.Data.remote.Dto
 
 import com.example.riverislandapplication.Domain.Models.Item
+import com.example.riverislandapplication.Domain.Models.ItemDetail
 
 data class Product(
     val allImages: List<String>,
@@ -37,6 +38,7 @@ data class Product(
     val wascostWEK: String,
     val wascostWER: String
 )
+
 fun Product.toItem():Item {
     return Item(
         name = name,
@@ -44,11 +46,12 @@ fun Product.toItem():Item {
         cost = cost
     )
 }
-    fun Product.toItemDescription(): Item {
-        return Item(
+    fun Product.toItemDescription(): ItemDetail {
+        return ItemDetail(
             name = name,
             prodid = prodid,
             cost = cost
         )
+}
 
-    }
+
