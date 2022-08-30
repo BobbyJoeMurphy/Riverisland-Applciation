@@ -1,10 +1,14 @@
 package com.example.riverislandapplication.Domain.Repository
 
 
+import com.example.riverislandapplication.Common.Resource
+import com.example.riverislandapplication.Data.remote.Dto.ItemDTO
 import com.example.riverislandapplication.Data.remote.Dto.Product
-import com.example.riverislandapplication.Data.remote.Dto.Productdto
+
+import retrofit2.Response
+
 
 interface ItemRepository {
-    suspend fun getitems():List<Product>
-    suspend fun getitemsid(itemId: String): Product
+    suspend fun getitems(): Response<ItemDTO>
+    suspend fun getProductById(itemId: String): Product?
 }

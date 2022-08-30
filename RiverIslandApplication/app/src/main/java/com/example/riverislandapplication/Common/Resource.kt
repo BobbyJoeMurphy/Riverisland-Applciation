@@ -1,5 +1,6 @@
 package com.example.riverislandapplication.Common
 
+
 //holds data and error message pretty self explanatory
 sealed class Resource<T>(val data: T? = null, val message: String? = null) {
     class Success<T>(data: T) : Resource<T>(data)
