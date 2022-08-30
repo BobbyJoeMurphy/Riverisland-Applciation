@@ -17,6 +17,9 @@ class ItemRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getProductById(itemId: String): Product? {
-    return api.Getitems().body()?.Products?.find{product->product.prodid==itemId}
+    return api.Getitems().body()?.Products?.find{
+            product->
+        product.prodid==itemId
+    }
     }
 }
