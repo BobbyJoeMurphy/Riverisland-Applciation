@@ -48,20 +48,26 @@ fun itemListItem(
                 contentDescription = ""
             )
             Spacer(modifier = Modifier
+
                 .height(15.dp))
             Text(
 
                 text = item.name.uppercase(),
                 fontStyle = FontStyle.Italic,
-                fontSize = 11.sp
+                fontSize = 12.sp,
+                modifier = Modifier
+                    .padding(7.dp)
 
             )
             Spacer(modifier = Modifier
-                .height(15.dp))
+                .height(7.dp)
+            )
             Text(
                 text = "£"+item.cost+".00",
                 fontStyle = FontStyle.Italic,
-                        fontSize = 11.sp
+                        fontSize = 11.sp,
+                modifier = Modifier
+                    .padding(7.dp)
 
             )
         }
