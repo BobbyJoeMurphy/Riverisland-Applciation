@@ -21,7 +21,6 @@ import com.example.riverislandapplication.Data.remote.Dto.Product
 fun ItemDetailScreenItem(
     item: Product){
     val scrollState = rememberScrollState()
-
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -48,18 +47,12 @@ fun ItemDetailScreenItem(
                 Column( modifier = Modifier
                     .padding(15.dp)
                 ) {
-
-
                     Text(
-
                         text = item.name.uppercase(),
                         style = TextStyle(fontSize = 28.sp) ,
-
                         )
                     Spacer(modifier = Modifier.height(15.dp))
-
                     Text(
-
                         text = "£" + item.cost + ".00",
                         fontSize =18.sp
                     )
@@ -71,12 +64,7 @@ fun ItemDetailScreenItem(
                     )
                     Spacer(modifier = Modifier.height(5.dp))
                 }
-
-
             }
         }
-
     }
-
-
 }

@@ -21,12 +21,10 @@ import com.example.riverislandapplication.R
 fun AddToBagBox(
 
 )
-
      {
         Column(horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Bottom,
         modifier = Modifier.fillMaxSize()) {
-
             ExtendedFloatingActionButton(
                 text = {Text("Add to cart")},
                 onClick = { /*TODO*/ },

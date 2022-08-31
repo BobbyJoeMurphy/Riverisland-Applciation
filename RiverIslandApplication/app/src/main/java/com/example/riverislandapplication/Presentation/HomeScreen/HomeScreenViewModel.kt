@@ -24,29 +24,19 @@ fun HomeScreenViewModel (
 ) {
     Box(
         modifier = Modifier
-
     ){
         Column(
             modifier = Modifier.fillMaxSize()
-
-
-
         ) {
-
             SubcomposeAsyncImage(
                 model = "https://images.riverisland.com/is/image/RiverIsland/766200_main",
                 contentDescription = "sss",
                 contentScale = ContentScale.Crop,
-
                 modifier =
                 Modifier
                     .fillMaxSize()
-
-
             )
             Spacer(modifier = Modifier.height(15.dp))
-
-
         }
         Text(
             text ="Continue to RiverIsland",

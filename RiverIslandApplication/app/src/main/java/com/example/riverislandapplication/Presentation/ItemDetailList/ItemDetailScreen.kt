@@ -22,15 +22,13 @@ fun ItemDetailScreen(
     val state = viewModel.state.value
 
 
+
     Row {
-
-
         state.Item?.let { Item ->
             ItemDetailScreenItem(
                 item = Item,
             )
         }
-
     }
     AddToBagBox()
 
