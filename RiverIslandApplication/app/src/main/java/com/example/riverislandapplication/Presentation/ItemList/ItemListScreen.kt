@@ -1,10 +1,10 @@
 package com.example.riverislandapplication.Presentation.ItemList
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -19,45 +19,31 @@ import com.example.riverislandapplication.Presentation.ItemList.Components.itemL
 import com.example.riverislandapplication.Presentation.Screen
 
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ItemListSceen(
     navController: NavController,
     viewModel: ItemListViewModel = hiltViewModel()
-)
-{
+) {
     val state = viewModel.state.value
-    Box(modifier = Modifier.fillMaxWidth()){
-        LazyColumn(modifier = Modifier.fillMaxSize()){
-            //madesure items is a list not singular
-            items(state.Items){
-                item->
-                itemListItem(
-                    item = item,
-                    onItemClick = {
-                        navController.navigate(Screen.ItemDetailScreen.route + "/${item.prodid}")
-                    }
-                )
 
 
+LazyVerticalGrid(cells = GridCells.Fixed(2),
+        contentPadding = PaddingValues(1.dp),
+    verticalArrangement = Arrangement.spacedBy(15.dp),
+    horizontalArrangement = Arrangement.spacedBy(2.dp),
+    ) {
 
-
+    items(state.Items) { item ->
+        itemListItem(
+            item = item,
+            onItemClick = {
+                navController.navigate(Screen.ItemDetailScreen.route + "/${item.prodid}")
             }
-        }
-        if(state.error.isNotBlank()){
-            Text(
-                text = state.error,
-                color = MaterialTheme.colors.error,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
-                    .padding(horizontal = 20.dp)
-                    .align(
-                        Alignment.Center)
-                    
-
-            )
-        }
-
+        )
     }
-
-
 }
+}
+
+
+

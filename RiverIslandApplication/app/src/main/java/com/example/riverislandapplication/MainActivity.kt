@@ -23,8 +23,7 @@ class MainActivity : ComponentActivity() {
             RiverIslandApplicationTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+
                 ) {
                     Navigation()
                 }

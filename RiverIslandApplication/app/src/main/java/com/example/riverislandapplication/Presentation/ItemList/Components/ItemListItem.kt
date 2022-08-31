@@ -6,11 +6,15 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.compose.SubcomposeAsyncImage
 import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
 
 
 import com.example.riverislandapplication.Data.remote.Dto.Product
@@ -22,26 +26,39 @@ fun itemListItem(
     item: Product,
     onItemClick: (Product)-> Unit
 ) {
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxWidth()
             .clickable { onItemClick(item) }
-            .padding(20.dp),
-    ){
+            
+    ) {
+        Column(
 
+            modifier = Modifier,
+        ) {
+            SubcomposeAsyncImage(
+                modifier = Modifier
+                    .height(250.dp),
+                model = "https://images.riverisland.com/is/image/RiverIsland/${item.prodid}_main",
+                contentScale = ContentScale.Crop,
+                loading = {
+                    CircularProgressIndicator()
+                },
+                contentDescription = ""
+            )
+            Spacer(modifier = Modifier
+                .height(15.dp))
+            Text(
 
-        SubcomposeAsyncImage(model = item.allImages[0],
-            loading = {
-                CircularProgressIndicator()
-            },
-            contentDescription = "")
-        Text(
-            text ="${item.name}"
-        )
-        Text(
-            text ="£"+"${item.cost}"
-        )
+                text = "${item.name}".uppercase(),
+                fontStyle = FontStyle.Italic
 
+            )
+            Text(
+                text = "£" + "${item.cost}" +".00"
+            )
+
+        }
     }
 
 
