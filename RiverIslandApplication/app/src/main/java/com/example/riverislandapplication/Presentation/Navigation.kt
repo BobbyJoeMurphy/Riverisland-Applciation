@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.riverislandapplication.Domain.Models.Item
+import com.example.riverislandapplication.Presentation.ItemDetailList.Components.HomeScreen
 import com.example.riverislandapplication.Presentation.ItemDetailList.ItemDetailScreen
 import com.example.riverislandapplication.Presentation.ItemList.ItemListSceen
 
@@ -13,13 +14,16 @@ fun Navigation() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = Screen.ItemListScreen.route
+        startDestination = Screen.HomeScreen.route
     ) {
         composable(Screen.ItemListScreen.route) {
             ItemListSceen(navController = navController)
         }
         composable(Screen.ItemDetailScreen.route + "/{prodid}") {
             ItemDetailScreen()
+        }
+        composable(Screen.HomeScreen.route) {
+            HomeScreen(navController = navController)
         }
     }
 }

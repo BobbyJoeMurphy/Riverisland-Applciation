@@ -7,11 +7,14 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -26,7 +29,6 @@ fun ItemListSceen(
     viewModel: ItemListViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
-
 
 LazyVerticalGrid(cells = GridCells.Fixed(2),
         contentPadding = PaddingValues(1.dp),
@@ -43,6 +45,9 @@ LazyVerticalGrid(cells = GridCells.Fixed(2),
         )
     }
 }
+
+
+
 }
 
 

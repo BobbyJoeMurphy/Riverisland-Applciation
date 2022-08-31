@@ -5,11 +5,13 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.compose.SubcomposeAsyncImage
@@ -18,7 +20,6 @@ import coil.request.ImageRequest
 
 
 import com.example.riverislandapplication.Data.remote.Dto.Product
-
 
 
 @Composable
@@ -33,7 +34,6 @@ fun itemListItem(
             
     ) {
         Column(
-
             modifier = Modifier,
         ) {
             SubcomposeAsyncImage(
@@ -50,16 +50,13 @@ fun itemListItem(
                 .height(15.dp))
             Text(
 
-                text = "${item.name}".uppercase(),
+                text = item.name.uppercase(),
                 fontStyle = FontStyle.Italic
 
             )
-            Text(
-                text = "£" + "${item.cost}" +".00"
-            )
-
         }
     }
+
 
 
 }
