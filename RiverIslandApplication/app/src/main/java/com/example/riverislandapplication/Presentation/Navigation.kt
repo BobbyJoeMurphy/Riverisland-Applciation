@@ -20,7 +20,7 @@ fun Navigation() {
             ItemListSceen(navController = navController)
         }
         composable(Screen.ItemDetailScreen.route + "/{prodid}") {
-            ItemDetailScreen()
+            ItemDetailScreen(navController = navController)
         }
         composable(Screen.HomeScreen.route) {
             HomeScreen(navController = navController)

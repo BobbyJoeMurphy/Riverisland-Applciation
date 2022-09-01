@@ -80,7 +80,6 @@ fun ItemListSceen(
 
         ) {
             LazyVerticalGrid(
-
                 cells = GridCells.Fixed(2),
                 contentPadding = PaddingValues(1.dp),
                 verticalArrangement = Arrangement.spacedBy(15.dp),
@@ -100,8 +99,7 @@ fun ItemListSceen(
             }
 
         }
-
-        }
+}
 
 
 
